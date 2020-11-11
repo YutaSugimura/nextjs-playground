@@ -32,12 +32,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn check-types"
     }
   },
   "lint-staged": {
-    "<rootDir>/src/**/*.{ts,tsx}": [
-      "tsc --noEmit",
+    "src/**/*.{ts,tsx}": [
       "eslint --quiet --fix"
     ]
   }
